@@ -1,40 +1,46 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Fourthambit presentation</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+	<title>Fourthambit presentation</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
 
-		<!-- Printing and PDF exports -->
-		<script src="plugin/markdown/marked.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section><h1>Node.js</h1>
-					<section data-markdown>
-						<textarea data-template>
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/monokai.css">
+
+	<!-- Printing and PDF exports -->
+	<script src="plugin/markdown/marked.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1><span style="color:green;">Node.js</span>, <br><span style="color:red;">Express</span>, <br>Mongo<span style="color:greenyellow;">DB</span></h1>
+			</section>
+			<section>
+				<h1>Node.js</h1>
+				<section data-markdown>
+					<textarea data-template>
 							As an asynchronous event driven JavaScript runtime, Node is designed to build scalable network applications. In the following "hello world" example, many connections can be handled concurrently. Upon each connection the callback is fired, but if there is no work to be done, Node will sleep.
 						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
 							Simple Hello World Application
 							```javascript
 							const http = require('http');
@@ -51,9 +57,9 @@
 							});
 							```
 						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
 							usage
 							```
 							$ node hello-world.js
@@ -63,24 +69,25 @@
 							Server running at http://127.0.0.1:3000/
 							```
 						</textarea>
-					</section>
 				</section>
-				<section><h1>ExpressJS</h1>
-					<section data-markdown>
-						<textarea data-template>
+			</section>
+			<section>
+				<h1>ExpressJS</h1>
+				<section data-markdown>
+					<textarea data-template>
 							### Fast, unopinionated, minimalist web framework for Node.js<br>
 						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
 							#### Installing ExpressJS<br>
 							```
 							npm install express --save
 							```
 						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
 							Simple Hello World Application
 							```
 							const express = require('express')
@@ -93,37 +100,86 @@
 								`Example app listening on port ${port}!`))
 							```
 						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
 							Run the app with the following command:
 							```
 							$ node app.js
 							```
 							Then, load http://localhost:3000/ in a browser to see the output.
 						</textarea>
-					</section>
 				</section>
-				<section><h1>MongoDB</h1>
-					
+			</section>
+			<section>
+				<h1>MongoDB</h1>
+				<section>
+					MongoDB is a general purpose, document-based, distributed database built for modern application
+					developers and for the cloud era. No database is more productive to use.
 				</section>
-			</div>
+				<section>
+					MongoDB is a document database, which means it stores data in JSON-like documents. We believe this
+					is the most natural way to think about data, and is much more expressive and powerful than the
+					traditional row/column model.
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+							### All the power of a relational database, and more...
+							- Full ACID transactions.		
+							- Support for joins in queries.
+							- Two types of relationships instead of one: reference and embedded.
+							- The most natural and productive way to work with data.
+							- Supports arrays and nested objects as values.
+							- Allows for flexible and dynamic schemas.
+						</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						Example
+						```		
+						{
+							"_id": "5cf0029caff5056591b0ce7d",
+							"firstname": "Jane",
+							"lastname": "Wu",
+							"address": {
+							  "street": "1 Circle Rd",
+							  "city": "Los Angeles",
+							  "state": "CA",
+							  "zip": "90404"
+							},
+							"hobbies": ["surfing", "coding"]
+						}
+						```  
+					</textarea>
+				</section>
+			</section>
 		</div>
+	</div>
 
-		<script src="js/reveal.js"></script>
+	<script src="js/reveal.js"></script>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true }
-				]
-			});
-		</script>
-	</body>
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [{
+					src: 'plugin/markdown/marked.js'
+				},
+				{
+					src: 'plugin/markdown/markdown.js'
+				},
+				{
+					src: 'plugin/notes/notes.js',
+					async: true
+				},
+				{
+					src: 'plugin/highlight/highlight.js',
+					async: true
+				}
+			]
+		});
+	</script>
+</body>
+
 </html>
