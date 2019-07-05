@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Fourthambit presentation</title>
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
@@ -14,6 +14,8 @@
 		<link rel="stylesheet" href="lib/css/monokai.css">
 
 		<!-- Printing and PDF exports -->
+		<script src="plugin/markdown/marked.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
 		<script>
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
@@ -25,8 +27,86 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section><h1>Node.js</h1>
+					<section data-markdown>
+						<textarea data-template>
+							As an asynchronous event driven JavaScript runtime, Node is designed to build scalable network applications. In the following "hello world" example, many connections can be handled concurrently. Upon each connection the callback is fired, but if there is no work to be done, Node will sleep.
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							Simple Hello World Application
+							```javascript
+							const http = require('http');
+							const hostname = '127.0.0.1';
+							const port = 3000;
+							const server = http.createServer((req, res) => {
+							  res.statusCode = 200;
+							  res.setHeader('Content-Type', 'text/plain');
+							  res.end('Hello World\n');
+							});
+							server.listen(port, hostname, () => {
+							  console.log(`Server running at http://${hostname}
+							  :${port}/`);
+							});
+							```
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							usage
+							```
+							$ node hello-world.js
+							```
+							server starts running,
+							```
+							Server running at http://127.0.0.1:3000/
+							```
+						</textarea>
+					</section>
+				</section>
+				<section><h1>ExpressJS</h1>
+					<section data-markdown>
+						<textarea data-template>
+							### Fast, unopinionated, minimalist web framework for Node.js<br>
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							#### Installing ExpressJS<br>
+							```
+							npm install express --save
+							```
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							Simple Hello World Application
+							```
+							const express = require('express')
+							const app = express()
+							const port = 3000
+							
+							app.get('/', (req, res) => res.send('Hello World!'))
+							
+							app.listen(port, () => console.log(
+								`Example app listening on port ${port}!`))
+							```
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							Run the app with the following command:
+							```
+							$ node app.js
+							```
+							Then, load http://localhost:3000/ in a browser to see the output.
+						</textarea>
+					</section>
+				</section>
+				<section><h1>MongoDB</h1>
+					
+				</section>
 			</div>
 		</div>
 
